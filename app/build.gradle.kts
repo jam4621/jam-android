@@ -1,19 +1,19 @@
-import org.jetbrains.kotlin.config.KotlinCompilerVersion
-
 plugins {
     id("com.android.application")
     id("kotlin-android")
+    id(lint.ktlintPluginId)
+    id(lint.ktlintPluginIdeaId)
 }
 
 android {
-    compileSdkVersion(30)
+    compileSdkVersion(buildConfigVersions.compileSdkVersion)
 
     defaultConfig {
-        applicationId = "com.wejam4621.vn"
-        minSdkVersion(21)
-        targetSdkVersion(30)
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = buildConfigVersions.applicationId
+        minSdkVersion(buildConfigVersions.minSdkVersion)
+        targetSdkVersion(buildConfigVersions.targetSdkVersion)
+        versionCode = buildConfigVersions.versionCode
+        versionName = buildConfigVersions.versionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -42,12 +42,21 @@ android {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.5.10")
-    implementation("androidx.core:core-ktx:1.5.0")
-    implementation("androidx.appcompat:appcompat:1.3.0")
-    implementation("com.google.android.material:material:1.3.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.0.4")
-    testImplementation("junit:junit:4.+")
-    androidTestImplementation("androidx.test.ext:junit:1.1.2")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.3.0")
+    /** Kotlin **/
+    implementation(kotlinDependencies.kotlin)
+
+    /** Coroutines **/
+
+    /** Support androidx libraries **/
+    implementation(androidxSupportDependencies.coreKtx)
+    implementation(androidxSupportDependencies.appcompat)
+    implementation(androidxSupportDependencies.constraintLayout)
+
+    /** Material design **/
+    implementation(materialDesignDependencies.material)
+
+    /** Testing **/
+    testImplementation(testingDependencies.junit)
+    androidTestImplementation(testingDependencies.extJunit)
+    androidTestImplementation(testingDependencies.espressoCore)
 }

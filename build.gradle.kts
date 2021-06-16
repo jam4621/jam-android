@@ -3,11 +3,12 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        maven("https://plugins.gradle.org/m2/")
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:4.2.1")
-        classpath(kotlin("gradle-plugin", version = "1.5.10"))
-
+        classpath(gradleDependencies.gradleBuildTool)
+        classpath(kotlin(gradleDependencies.gradlePluginModule, version = gradleDependencies.gradlePluginModuleVersion))
+        classpath(lint.ktlintPluginClasspath)
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -23,3 +24,5 @@ allprojects {
 tasks.register("clean", Delete::class.java) {
     delete(rootProject.buildDir)
 }
+
+apply(plugin = lint.ktlintPluginId)
