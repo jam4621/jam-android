@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">jam-android</string>
+    <string name="app_name">JAM!</string>
+    <string name="temp_create_new_jam">Create New Jam</string>
 </resources>

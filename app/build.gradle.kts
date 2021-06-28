@@ -1,11 +1,11 @@
 plugins {
     id("com.android.application")
     id("kotlin-android")
+    id("kotlin-kapt")
 
     id(lint.ktlintPluginId)
     id(lint.ktlintPluginIdeaId)
 
-    kotlin("kapt")
     id(jetpackLibraries.hilt.hiltPluginId)
 }
 
@@ -43,6 +43,10 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
+
+    buildFeatures {
+        dataBinding = true
+    }
 }
 
 dependencies {
@@ -70,4 +74,9 @@ dependencies {
     implementation(jetpackLibraries.hilt.hilt)
     kapt(jetpackLibraries.hilt.hiltCompiler)
     implementation(jetpackLibraries.hiltNavigationFragment)
+
+    /** Lifecycle **/
+    implementation(jetpackLibraries.lifecycle.viewModel)
+    implementation(jetpackLibraries.lifecycle.liveData)
+    implementation(jetpackLibraries.lifecycle.annotationProcessor)
 }

@@ -61,6 +61,13 @@ object jetpackLibraries {
         const val hilt = "com.google.dagger:hilt-android:$version"
         const val hiltCompiler = "com.google.dagger:hilt-android-compiler:$version"
     }
+
+    object lifecycle {
+        private const val version = "2.4.0-alpha02"
+        const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$version"
+        const val liveData = "androidx.lifecycle:lifecycle-livedata-ktx:$version"
+        const val annotationProcessor = "androidx.lifecycle:lifecycle-common-java8:$version"
+    }
 }
 
 object materialDesignDependencies {
