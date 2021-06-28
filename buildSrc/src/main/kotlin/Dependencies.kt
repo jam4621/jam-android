@@ -25,7 +25,7 @@ object kotlinDependencies {
     const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
 }
 
-object androidxSupportDependencies {
+object jetpackLibraries {
     private const val coreKtxVersion = "1.5.0"
     const val coreKtx = "androidx.core:core-ktx:$coreKtxVersion"
 
@@ -34,6 +34,33 @@ object androidxSupportDependencies {
 
     private const val constraintLayoutVersion = "2.0.4"
     const val constraintLayout = "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+
+    private const val hiltNavigationFragmentVersion = "1.0.0"
+    const val hiltNavigationFragment = "androidx.hilt:hilt-navigation-fragment:$hiltNavigationFragmentVersion"
+
+    object navigation {
+        private const val version = "2.3.5"
+        const val fragmentKtx = "androidx.navigation:navigation-fragment-ktx:$version"
+        const val uiKtx = "androidx.navigation:navigation-ui-ktx:$version"
+    }
+
+    object test {
+        private const val extJunitVersion = "1.1.1"
+        const val extJunit = "androidx.test.ext:junit:$extJunitVersion"
+
+        private const val espressoVersion = "3.3.0"
+        const val espressoCore = "androidx.test.espresso:espresso-core:$espressoVersion"
+    }
+
+    object hilt {
+        private const val version = "2.35"
+
+        const val hiltClasspath = "com.google.dagger:hilt-android-gradle-plugin:$version"
+        const val hiltPluginId = "dagger.hilt.android.plugin"
+
+        const val hilt = "com.google.dagger:hilt-android:$version"
+        const val hiltCompiler = "com.google.dagger:hilt-android-compiler:$version"
+    }
 }
 
 object materialDesignDependencies {
@@ -42,12 +69,6 @@ object materialDesignDependencies {
 }
 
 object testingDependencies {
-    private const val extJunitVersion = "1.1.1"
-    const val extJunit = "androidx.test.ext:junit:$extJunitVersion"
-
-    private const val espressoVersion = "3.3.0"
-    const val espressoCore = "androidx.test.espresso:espresso-core:$espressoVersion"
-
     private const val junitVersion = "4.13.2"
     const val junit = "junit:junit:$junitVersion"
 }

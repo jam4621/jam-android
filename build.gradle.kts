@@ -9,6 +9,7 @@ buildscript {
         classpath(gradleDependencies.gradleBuildTool)
         classpath(kotlin(gradleDependencies.gradlePluginModule, version = gradleDependencies.gradlePluginModuleVersion))
         classpath(lint.ktlintPluginClasspath)
+        classpath(jetpackLibraries.hilt.hiltClasspath)
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
