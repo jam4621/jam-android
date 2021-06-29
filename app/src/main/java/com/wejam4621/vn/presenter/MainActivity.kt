@@ -9,7 +9,7 @@ import com.wejam4621.vn.presenter.utils.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
+class MainActivity:AppCompatActivity() {
 
     private val binding by viewBinding(ActivityMainBinding::inflate)
 
