@@ -13,7 +13,7 @@ object buildConfigVersions {
 }
 
 object gradleDependencies {
-    private const val gradleBuildToolVersion = "4.2.1"
+    private const val gradleBuildToolVersion = "4.2.2"
     const val gradleBuildTool = "com.android.tools.build:gradle:$gradleBuildToolVersion"
 
     const val gradlePluginModuleVersion = "1.5.10"
