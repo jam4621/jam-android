@@ -22,6 +22,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class HomeFragment : Fragment(R.layout.fragment_home) {
+
     private val binding by viewBinding(FragmentHomeBinding::bind)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
